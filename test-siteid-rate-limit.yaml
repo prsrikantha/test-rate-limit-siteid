@@ -1,0 +1,27 @@
+id: test-rate-limit-siteid
+name: test-rate-limit-siteid
+description: rate limit site id
+category: Custom
+type: custom
+resourceLevelSupported: true
+encryptionSupported: false
+standalone: true
+requiredCharacteristics: []
+providedCharacteristics: []
+configuration: 
+  - propertyName: id
+    name: customer id to rate limit
+    description: Enter Key/Field name to mask all the matching fields in an entire payload.
+    type: string
+    optional: false
+    allowMultiple: false
+    defaultValue: "101"
+    
+  - propertyName: appname
+    name: application name
+    description: application name to match customer id
+    type: string
+    optional: false
+    allowMultiple: false
+    defaultValue: "testproject"
+   
