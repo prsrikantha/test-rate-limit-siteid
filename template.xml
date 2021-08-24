@@ -10,17 +10,27 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 
 
     <http-policy:proxy name="{{{policyId}}}-custom-policy">
-    <set-variable variableName="id" value="{{id}}" />
-    <set-variable variableName="appname" value="{{appname}}" />
+    <!-- <set-variable variableName="id" value="{{id}}" />
+    <set-variable variableName="appname" value="{{appname}}" /> -->
         <http-policy:source>
+        <set-variable variableName="idv" value="{{{id}}}" />
+        <logger message="Custom policy started {{{id}}}" />
+        <try>
 			<http:request method="GET" doc:name="Request" doc:id="75386eea-ee32-4a62-a142-c65a1ad8fd78" config-ref="HTTP_Request_configuration" path="/test">
 			<http:query-params ><![CDATA[#[output application/java
 ---
 {
-	"id" : vars.id,
-	"appname": vars.appname
+	"id" : vars.idv,
+	"appname":"{{{appname}}}"
 }]]]></http:query-params>
 		</http:request>
+		<error-handler>
+			<on-error-propagate>
+				 <set-payload value="#['Too Many Requests for id: ' ++ vars.idv ++ ', Try After Sometime']" />
+			</on-error-propagate>
+		</error-handler>
+		</try>
+		<logger message="Custom policy ended" />
             <http-policy:execute-next/>
 
             <!-- <http-transform:set-response statusCode="201">

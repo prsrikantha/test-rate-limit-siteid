@@ -12,10 +12,10 @@ configuration:
   - propertyName: id
     name: customer id to rate limit
     description: Enter Key/Field name to mask all the matching fields in an entire payload.
-    type: string
+    type: expression
     optional: false
+    sensitive: false
     allowMultiple: false
-    defaultValue: "101"
     
   - propertyName: appname
     name: application name

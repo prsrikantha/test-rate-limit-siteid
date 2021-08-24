@@ -4,7 +4,7 @@
 
 	<groupId>8add2de5-f604-40d8-8336-dd50e54b2ae3</groupId>
 	<artifactId>test-siteid-rate-limit</artifactId>
-	<version>1.0.0</version>
+	<version>1.2.0</version>
 
 	<name>test-rate-limit-siteid</name>
 	<description>rate limit site id</description>
@@ -12,7 +12,7 @@
 	<packaging>mule-policy</packaging>
 
 	<properties>
-		<mule.maven.plugin.version>3.3.2</mule.maven.plugin.version>
+		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 		<exchange.url>https://maven.anypoint.mulesoft.com/api/v1/organizations/8add2de5-f604-40d8-8336-dd50e54b2ae3/maven</exchange.url>
 		<http.policy.transform.extension>3.1.0</http.policy.transform.extension>
 	</properties>
@@ -104,17 +104,17 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<repositories>
-    <repository>
-        <id>mulesoft-releases</id>
-        <name>MuleSoft Repository</name>
-        <url>http://repository.mulesoft.org/releases/</url>
-        <layout>default</layout>
-    </repository>
-    <repository>
-        <id>mulesoft-snapshots</id>
-        <name>MuleSoft Snapshot Repository</name>
-        <url>http://repository.mulesoft.org/snapshots/</url>
-        <layout>default</layout>
-    </repository>
-</repositories>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Repository</name>
+			<url>http://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>mulesoft-snapshots</id>
+			<name>MuleSoft Snapshot Repository</name>
+			<url>http://repository.mulesoft.org/snapshots/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 </project>
